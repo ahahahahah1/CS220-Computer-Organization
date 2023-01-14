@@ -1,0 +1,70 @@
+$date
+	Sat Jan 14 20:33:03 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fullsubtractor_tb $end
+$var wire 1 ! d $end
+$var wire 1 " bout $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % bin $end
+$scope module foo $end
+$var wire 1 " B_out $end
+$var wire 1 # a $end
+$var wire 1 & a1 $end
+$var wire 1 ' a2 $end
+$var wire 1 $ b $end
+$var wire 1 % c $end
+$var wire 1 ! diff $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0'
+1&
+1%
+1$
+1#
+1"
+1!
+$end
+#1
+0"
+0!
+0&
+0%
+#2
+0"
+0&
+1%
+0$
+#3
+1!
+0%
+#4
+1"
+0!
+1'
+1%
+1$
+0#
+#5
+1!
+0%
+#6
+1&
+1"
+0'
+1%
+0$
+#7
+0"
+0!
+0&
+0%
