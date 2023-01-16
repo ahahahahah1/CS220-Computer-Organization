@@ -1,5 +1,5 @@
 $date
-	Mon Jan 16 00:15:00 2023
+	Mon Jan 16 16:02:51 2023
 $end
 $version
 	Icarus Verilog
@@ -21,11 +21,13 @@ $var wire 1 ' a2 $end
 $var wire 1 $ b $end
 $var wire 1 % c $end
 $var wire 1 ! diff $end
+$var wire 1 ( xo1 $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
+0(
 0'
 1&
 1%
@@ -42,6 +44,7 @@ $end
 #2
 0"
 0&
+1(
 1%
 0$
 #3
@@ -49,8 +52,8 @@ $end
 0%
 #4
 1"
-0!
 1'
+0!
 1%
 1$
 0#
@@ -60,6 +63,7 @@ $end
 #6
 1&
 1"
+0(
 0'
 1%
 0$

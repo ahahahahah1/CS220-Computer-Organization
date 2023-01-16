@@ -5,7 +5,8 @@ output sum, c_out;
 
 wire x, y, z;
 
-assign sum = a ^ b ^ c_in;
+// assign sum = a ^ b ^ c_in;
+xor x1(sum, a, b, c_in);
 
 and a1(x, a, b);
 and a2(y, a, c_in);
