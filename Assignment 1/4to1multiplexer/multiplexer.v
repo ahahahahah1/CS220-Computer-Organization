@@ -20,7 +20,7 @@ or o1(out, a1, a2, a3, a4);
 endmodule
 
 
-module 32bitMux(i0, i1, i2, i3, s0, s1, out);
+module bit32Mux(i0, i1, i2, i3, s0, s1, out);
     input [31:0] i0, i1, i2, i3;
     input s0, s1;
     output wire [31:0] out;
