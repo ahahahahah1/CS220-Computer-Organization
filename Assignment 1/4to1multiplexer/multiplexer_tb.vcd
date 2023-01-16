@@ -1,5 +1,5 @@
 $date
-	Mon Jan 16 01:07:53 2023
+	Mon Jan 16 16:02:04 2023
 $end
 $version
 	Icarus Verilog
@@ -7,7 +7,7 @@ $end
 $timescale
 	1s
 $end
-$scope module multiplexer_top $end
+$scope module multiplexer_tb $end
 $var wire 1 ! out $end
 $var reg 1 " i0 $end
 $var reg 1 # i1 $end
@@ -52,9 +52,8 @@ $end
 #3
 1&
 #4
-1(
 1!
-0+
+1(
 0&
 0'
 1%
