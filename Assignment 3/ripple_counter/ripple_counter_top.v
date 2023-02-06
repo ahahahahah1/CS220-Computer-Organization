@@ -1,10 +1,10 @@
-`include './ripple_counter.v'
+`include "./ripple_counter.v"
 
 module ripple_counter_top(flag, q);
 	parameter freq = 50_000_000;
 	input flag;
 	output q;
-	reg [3:0] q;
+	wire [3:0] q;
 
 	reg [31:0] counter;
 	reg clk, rst;
@@ -16,9 +16,10 @@ module ripple_counter_top(flag, q);
 
 	ripple_counter RC(.clk(clk), .flag(flag), .reset(1'b0), .q(q));
 
-	always@(*) begin
+	always @(*) begin
 		counter <= counter + 1;
-	if(counter > freq) begin
-		clk = ~clk;
+		if(counter > freq) begin
+			clk <= ~clk;
+		end
 	end
 endmodule
