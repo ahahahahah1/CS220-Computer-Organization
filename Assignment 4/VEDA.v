@@ -1,4 +1,4 @@
-module VEDA(clk, reset, mode, write_enable, [5:0] address, data_in, data_out);
+module VEDA(clk, reset, mode, write_enable, address, data_in, data_out);
 
   input clk, reset, mode, write_enable;
   input [5:0] address;
