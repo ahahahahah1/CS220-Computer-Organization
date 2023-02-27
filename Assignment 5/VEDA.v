@@ -8,6 +8,11 @@ module VEDA(clk, reset, mode, write_enable, address, data_in, data_out);
   reg [31:0] memory [31:0];
   reg [31:0] temp;
   
+  memory[0] = 32'b0_1000_0101_0111_0101_0000_0000_0000_000; //93.25
+  memory[1] = 32'b0_1000_0010_1001_1010_0000_0000_0000_000; //12.8125
+  memory[2] = 32'b0_1000_0101_1010_1000_0100_0000_0000_000; //106.0625 - the correct sum
+  memory[3] = 32'b0_1000_0101_0010_1000_0100_0000_0000_000; //incorrect sum
+
   always@(posedge clk) begin
     if(reset) begin
       data_out <= 0;
