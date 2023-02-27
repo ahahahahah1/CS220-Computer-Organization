@@ -31,18 +31,24 @@
 //         $monitor("a = %b, b = %b, result = %b", a, b, result);
 //     end
 
-`include "fPa.v"
+`include "float_adder.v"
 
 module fp_adder_tb();
     reg [31:0] a;
     reg [31:0] b;
     wire [31:0] result;
-
-    fp_adder fp_adder1(
-        .a(a),
-        .b(b),
-        .sum(result)
+    reg clk;
+    adder fp_adder1(
+        .operand_1(a),
+        .operand_2(b),
+        .clk(clk),
+        .Sum(result)
     );
+
+    initial begin
+        clk = 0;
+        forever #1 clk = ~clk;
+    end
 
     initial begin
         a = 32'h42BA8000; //93.25
@@ -51,12 +57,14 @@ module fp_adder_tb();
         a = 32'h3E00D1B7; //0.1258
         b = 32'h3F8051EC; //1.0025
         #10;
-        a = 32'hC12CCCCD; //-10.8
-        b = 32'hC1480000; //-12.5
+        a = 32'hC12CCCCD; //-10.8 // 11000001 00101100 11001100 11001101
+        b = 32'hC1480000; //-12.5 // 11000001 01000100 10000000 00000000
         #10;
         a = 32'hC12CCCCD; //-10.8
         b = 32'h41480000; //12.5
         #10;
+        #10
+        $finish;
     end
 
     initial begin
