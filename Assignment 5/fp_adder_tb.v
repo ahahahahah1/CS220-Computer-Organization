@@ -31,7 +31,7 @@
 //         $monitor("a = %b, b = %b, result = %b", a, b, result);
 //     end
 
-`include "fp_adder.v"
+`include "fPa.v"
 
 module fp_adder_tb();
     reg [31:0] a;
@@ -41,25 +41,30 @@ module fp_adder_tb();
     fp_adder fp_adder1(
         .a(a),
         .b(b),
-        .result(result)
+        .sum(result)
     );
 
     initial begin
-        a = 32'h00A38000;
-        b = 32'h00A38000;
+        a = 32'h42BA8000; //93.25
+        b = 32'h41453333; //12.375
         #10;
-        a = 32'h00B38000;
-        b = 32'h00A38000;
+        a = 32'h3E00D1B7; //0.1258
+        b = 32'h3F8051EC; //1.0025
         #10;
-        a = 32'h00A3C000;
-        b = 32'h00A38000;
+        a = 32'hC12CCCCD; //-10.8
+        b = 32'hC1480000; //-12.5
         #10;
-        a = 32'h00A38900;
-        b = 32'h01838000;
+        a = 32'hC12CCCCD; //-10.8
+        b = 32'h41480000; //12.5
         #10;
     end
 
     initial begin
         $monitor("a = %h, b = %h, result = %h", a, b, result);
+        //expected result is 
+        //1st : 42D34000
+        //2nd : 1.1283
+        //3rd : -23.3
+        //4th : 1.3
     end
 endmodule
