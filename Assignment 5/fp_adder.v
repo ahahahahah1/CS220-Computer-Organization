@@ -8,6 +8,10 @@ reg [22:0] a_mantissa;
 reg [22:0] b_mantissa;
 reg [7:0] a_exponent;
 reg [7:0] b_exponent;
+reg [7:0] exponent_diff;
+reg [23:0] aligned_a_mantissa;
+reg [23:0] aligned_b_mantissa;
+reg [24:0] sum;
 reg a_sign;
 reg b_sign;
 reg carry;
@@ -22,22 +26,23 @@ always @(*) begin
     b_exponent = b[30:23];
 
     // Calculate the difference in exponents
-    reg [7:0] exponent_diff = a_exponent - b_exponent;
+    exponent_diff = a_exponent - b_exponent;
 
     // Align the mantissas based on the exponent difference
-    reg [23:0] aligned_a_mantissa;
-    reg [23:0] aligned_b_mantissa;
+    // reg [23:0] aligned_a_mantissa;
+    // reg [23:0] aligned_b_mantissa;
 
     if (exponent_diff > 0) begin
         aligned_a_mantissa = {a_mantissa, {exponent_diff{1'b0}}};
         aligned_b_mantissa = b_mantissa;
-    end else begin
+    end 
+    if(exponent_diff <= 0) begin
         aligned_a_mantissa = a_mantissa;
         aligned_b_mantissa = {b_mantissa, {-exponent_diff{1'b0}}};
     end
 
     // Add the mantissas
-    reg [24:0] sum = {aligned_a_mantissa, 1'b0} + {aligned_b_mantissa, 1'b0};
+    sum = {aligned_a_mantissa, 1'b0} + {aligned_b_mantissa, 1'b0};
 
     // Check for overflow
     if (sum[25]) begin
