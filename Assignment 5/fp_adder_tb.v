@@ -63,7 +63,7 @@ module fp_adder_tb();
         // a = 32'hC12CCCCD; //-10.8
         // b = 32'h41480000; //12.5
         // #20;
-        #30
+        #40
         $finish;
     end
 

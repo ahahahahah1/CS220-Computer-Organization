@@ -31,7 +31,7 @@ compandshift cas(mantissa_1,mantissa_2,exponent_1,exponent_2,clk,reset,cas_shift
 addition add(shifted_mantissa_1,shifted_mantissa_2,tmp_new_exponent,clk,reset,add_mantissa_sum,add_new_exponent,done_2); 
 normalisation normalise(mantissa_sum,new_exponent,clk,reset,mantissa_final,exponent_final,done_3);
 
-always @(clk)
+always @(posedge clk)
 begin
     if(busy_1==0)
     begin
@@ -78,7 +78,7 @@ output reg [7:0] cas_new_exponent;
 output reg done_1=0;
 reg [7:0] diff; 
 
-always @(clk)
+always @(posedge clk)
 begin
     if(cas_exponent_1 == cas_exponent_2)
     begin
@@ -115,7 +115,7 @@ input clk,reset;
 output reg [24:0] mantissa_sum;
 output reg done_2=0;
 output reg [7:0] add_new_exponent;
-always @(clk)
+always @(posedge clk)
 begin
     mantissa_sum<=shifted_mantissa_1+shifted_mantissa_2;
     add_new_exponent<=tmp_new_exponent;
@@ -137,7 +137,7 @@ output reg [7:0] exponent_final;
 output reg done_3=0;
 reg rst=0;
 
-always @(clk)
+always @(posedge clk)
 begin
     if(rst==0)
     begin
