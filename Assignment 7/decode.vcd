@@ -1,0 +1,92 @@
+$date
+	Mon Mar 20 14:49:13 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module decode $end
+$var wire 32 ! data_out [31:0] $end
+$var reg 1 " clk $end
+$var reg 32 # data_in [31:0] $end
+$var reg 5 $ r_address [4:0] $end
+$var reg 1 % r_enable $end
+$var reg 5 & w_address [4:0] $end
+$var reg 1 ' w_enable $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 32 ( data_in [31:0] $end
+$var wire 5 ) r_address [4:0] $end
+$var wire 1 % r_enable $end
+$var wire 5 * w_address [4:0] $end
+$var wire 1 ' w_enable $end
+$var reg 32 + data_out [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx +
+b0 *
+b0 )
+b0 (
+0'
+b0 &
+1%
+b0 $
+b0 #
+0"
+bx !
+$end
+#5
+b1000100010000000100000 !
+b1000100010000000100000 +
+1"
+#10
+0"
+b1 $
+b1 )
+#15
+b10000100010000000100011 !
+b10000100010000000100011 +
+1"
+#20
+0"
+b10 $
+b10 )
+#25
+b100000011000100000000000000011 !
+b100000011000100000000000000011 +
+1"
+#30
+0"
+#35
+1"
+#40
+0"
+#45
+1"
+#50
+0"
+#55
+1"
+#60
+0"
+#65
+1"
+#70
+0"
+#75
+1"
+#80
+0"
+#85
+1"
+#90
+0"
+#95
+1"
+#100
+0"
