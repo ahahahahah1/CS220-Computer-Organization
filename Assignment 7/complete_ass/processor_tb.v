@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-`include "top.v"
+`include "processor.v"
 
 `define CYCLE_TIME 20
 
@@ -10,7 +10,7 @@ module top_tb;
 
   always #(`CYCLE_TIME / 2) clk = ~clk;
 
-  top uut (.clk(clk));
+  processor uut (.clk(clk));
 
   initial begin
     // Initialize data memory

@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module Register (
+module VEDA_R (
     input clk,
     input [31:0] instruction,  // the raw 32-bit instruction
     input RegWrite,

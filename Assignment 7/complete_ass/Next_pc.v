@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module Next_pc (
+module NEXT_PC (
     input [31:0] old,  // the original program addr.
     input [31:0] instruction,  // the original instruction
     // [15-0] used for sign-extention

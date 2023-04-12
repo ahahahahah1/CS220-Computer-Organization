@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module Data_memory (
+module VEDA_D (
     input clk,
     input [31:0] addr,
     input [31:0] wData,
@@ -17,7 +17,7 @@ module Data_memory (
   integer i;
   initial begin
     for (i = 0; i < SIZE_DM ; i = i + 1) begin
-      Dmem[i] = 32'b0;
+      Dmem[i] = 0;
     end
   end
 

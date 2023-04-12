@@ -1,14 +1,14 @@
 `timescale 1ns / 1ps
-`include "Program_counter.v"
-`include "Instruction_memory.v"
-`include "Register.v"
+`include "PC.v"
+`include "VEDA_I.v"
+`include "VEDA_R.v"
 `include "ALU.v"
 `include "ALU_control.v"
 `include "Control.v"
-`include "Data_memory.v"
-`include "Next_pc.v"
+`include "VEDA_D.v"
+`include "NEXT_PC.v"
 
-module top (
+module processor (
     input clk  // clock signal for PC and RD
 );
 
@@ -29,13 +29,13 @@ module top (
   wire c_zero;
   wire [31:0] alu_result;
 
-  Program_counter u_Program_counter (
+  PC u_Program_counter (
       .clk (clk),
       .next(pc_in),
       .out (pc_out)
   );
 
-  Instruction_memory u_Instruction_memory (
+  VEDA_I u_Instruction_memory (
       .addr       (pc_out),
       .ctr        (im_ctr),
       .funcode    (im_funcode),
@@ -43,7 +43,7 @@ module top (
   );
 
 
-  Register u_Register (
+  VEDA_R u_Register (
       .clk        (clk),
       .instruction(im_instruction),
       .RegWrite   (c_RegWrite),
@@ -86,7 +86,7 @@ module top (
   );
 
 
-  Data_memory u_Data_memory (
+  VEDA_D u_Data_memory (
       .clk      (clk),
       .addr     (alu_result),  // im_instruction
       .wData    (r_read2),
@@ -98,7 +98,7 @@ module top (
   );
 
 
-  Next_pc u_Next_pc (
+  NEXT_PC u_Next_pc (
       .old        (pc_out),
       .instruction(im_instruction),
       .Jump       (c_Jump),
