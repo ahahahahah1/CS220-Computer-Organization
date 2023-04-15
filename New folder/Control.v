@@ -1,7 +1,18 @@
 `timescale 1ns / 1ps
 
 
-module Control ( input [31:0] instruction, output reg instruction_check, output reg Jump, output reg Branch, output reg Bne,  output reg MemRead,output reg MemtoReg,output reg [1:0] ALUOp,output reg MemWrite,output reg ALUSrc,output reg RegWrite);
+module Control (input [5:0] opcode, 
+                output reg instruction_check, 
+                output reg Jump, 
+                output reg Branch, 
+                output reg Bne,  
+                output reg MemRead,
+                output reg MemtoReg,
+                output reg [1:0] ALUOp,
+                output reg MemWrite,
+                output reg ALUSrc,
+                output reg RegWrite
+);
 
     
   initial begin
@@ -16,8 +27,8 @@ module Control ( input [31:0] instruction, output reg instruction_check, output 
     RegWrite = 0;
   end
 
-  always @(instruction) begin
-    case (instruction[31:26])
+  always @(opcode) begin
+    case (opcode)
       6'b000000: begin  // ARITHMETIC
         instruction_check = 0;
         ALUSrc = 0;

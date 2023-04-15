@@ -1,12 +1,11 @@
 `timescale 1ns / 1ps
 
 
-module Data_memory (input clk,input [31:0] addr,input [31:0] writeData,input [31:0] ALU_final,input MemWrite,input Read_mem,input Reg_save,output reg [31:0] read_Data);
+module VEDA_D (input clk,input [31:0] addr,input [31:0] writeData,input [31:0] ALU_final,input MemWrite,input Read_mem,input Reg_save,output reg [31:0] read_Data);
   parameter MEM_HEIGHT = 32;
  
   reg [31:0] Data_mem[0:MEM_HEIGHT - 1];  // Memory
 
-  // initially set default data to 0
   integer i;
 
   initial begin
@@ -53,8 +52,8 @@ module Data_memory (input clk,input [31:0] addr,input [31:0] writeData,input [31
         Data_mem[5] = 10;
         Data_mem[6] = 9;
         Data_mem[7] = 7;
-        Data_mem[8] = 6;
-        Data_mem[9] = 5;
+        Data_mem[8] = 5;
+        Data_mem[9] = 6;
   end
 
   always @(addr or Read_mem or Reg_save or ALU_final) begin
@@ -78,7 +77,7 @@ module Data_memory (input clk,input [31:0] addr,input [31:0] writeData,input [31
   end
 
   initial begin
-    #50000;
+    #40000;
     $display("Sorted array is :");
     for(i = 0; i < 10; i = i + 1) begin
       $display("%d", Data_mem[i]);
