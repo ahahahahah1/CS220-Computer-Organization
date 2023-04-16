@@ -2,12 +2,12 @@
 
 
 module ALU (
-    input      [31:0] data1,        // data 1
-    input      [31:0] read2,        // data 2 from MUX
-    input      [31:0] instruction,  // used for sign-extension
-    input             ALUSrc,
-    input      [ 3:0] ALUcontrol,
-    output reg        zero,
+    input [31:0] data1,
+    input [31:0] read2,
+    input [31:0] instruction,
+    input ALUSrc,
+    input [3:0] ALUcontrol,
+    output reg zero,
     output reg [31:0] ALUresult
 );
 
