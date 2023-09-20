@@ -1,5 +1,7 @@
 # CS220_Assignments
 
+**Note**: The main repository used can be found in this [repository](https://github.com/cs220-adi-sid/CS220_Assignments) of the organization. (The code files are the same).
+
 The set of assignments completed (in a team of 2) for the university course of Computer Organization, covering verilog and assembly language programming. The broad highlights of each assignment are:
 
 ## 1. Introduction
