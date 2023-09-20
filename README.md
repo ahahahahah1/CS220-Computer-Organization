@@ -25,4 +25,4 @@ Designing a floating-point adder that reads inputs from the memory block previou
 Implementing bucket sort in C and MIPS assembly language.
 
 ## 7. Single Cycle Processor
-Designing a single-cycle MIPS processor with a given ISA which uses the memory block previously designed. This assignment was completed in 7 stages spread across 7 weeks.
+Designing a single-cycle MIPS processor with a given ISA which uses the memory block previously designed. This assignment was completed in 7 stages spread across 7 weeks. The processor was tested by running a sequennce of instructions to sort an array using bubble sort.
