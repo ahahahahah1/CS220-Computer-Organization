@@ -2,7 +2,7 @@
 
 **Note**: The main repository used can be found in this [repository](https://github.com/cs220-adi-sid/CS220_Assignments) of the organization. (The code files are the same).
 
-The set of assignments completed (in a team of 2) for the university course of Computer Organization, covering verilog and assembly language programming. The broad highlights of each assignment are:
+The set of assignments completed (in a team of 2) for the university course of Computer Organization at IIT Kanpur in my sophomore year under the joint instruction of [Prof. Urbi Chatterjee](https://urbiism.wixsite.com/urbi1989) and [Prof. Debapriya Basu Roy](https://dbroy24.wixsite.com/research/), covering verilog and assembly language programming. The broad highlights of each assignment are:
 
 ## 1. Introduction
 Designing Verilog modules for basic components of a digital circuit
@@ -28,3 +28,10 @@ Implementing bucket sort in C and MIPS assembly language.
 
 ## 7. Single Cycle Processor
 Designing a single-cycle MIPS processor with a given ISA which uses the memory block previously designed. This assignment was completed in 7 stages spread across 7 weeks. The processor was tested by running a sequennce of instructions to sort an array using bubble sort.
+
+The following design was used as an inspiration<sup>[1]</sup>:
+![Single Cycle MIPS Processor](https://github.com/ahahahahah1/CS220-Computer-Organization/assets/106398507/0f9a50c7-9edb-4a92-a4ad-274cf8291cb9)
+
+<b>References</b>:
+
+[1] Patterson and Hennesy: Computer Organization and Design (Fifth Edition)
